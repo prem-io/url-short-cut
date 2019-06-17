@@ -71,7 +71,7 @@ router.get('/:hash', (req, res) => {
         res.redirect('http://' + bookmark.original_url)
     })
     .catch((err) => {
-        res.send(err)
+        res.status(400).send({"error" : "Sorry, the link has expired."})
     })
 })
 
